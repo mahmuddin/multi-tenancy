@@ -115,18 +115,18 @@ return [
         // Koneksi untuk tenant database
         'tenant'  => [
             'driver'         => 'pgsql',
-            'host'           => env('TENANT_DB_HOST', env('DB_HOST', '127.0.0.1')),
-            'port'           => env('TENANT_DB_PORT', env('DB_PORT', '5432')),
-            'database'       => null, // Akan diset dinamis oleh tenancy
-            'username'       => env('TENANT_DB_USERNAME', env('DB_USERNAME', 'forge')),
-            'password'       => env('TENANT_DB_PASSWORD', env('DB_PASSWORD', '')),
+            'url'            => env('DB_URL'),
+            'host'           => env('TENANT_DB_HOST', '127.0.0.1'),
+            'port'           => env('TENANT_DB_PORT', '5433'),
+            'database'       => null, // Will be set dynamically
+            'username'       => env('TENANT_DB_USERNAME', 'forge'),
+            'password'       => env('TENANT_DB_PASSWORD', ''),
             'charset'        => 'utf8',
             'prefix'         => '',
             'prefix_indexes' => true,
             'search_path'    => 'public',
             'sslmode'        => 'prefer',
         ],
-
     ],
 
     /*
